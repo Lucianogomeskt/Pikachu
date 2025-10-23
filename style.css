@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 80%;
+    height: 500px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url('image/cenario.png');
+    /* caminho da imagem */
+    background-size: cover;
+    /* ajusta para preencher o espaço */
+    background-position: center;
+    /* centraliza a imagem */
+}
+
+.pokeball {
+    position: absolute;
+    bottom: 0;
+    width: 110px;
+    left: 100%;
+    animation: pokeball-animation 1.5s infinite linear;
+}
+
+.pikachu {
+    width: 150px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jump {
+    animation: jump 550ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 450px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes pokeball-animation {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -65px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0px;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -450px;
+    }
+    to {
+        right: 100%;
+    }
+}
