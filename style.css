@@ -12,11 +12,8 @@
     position: relative;
     overflow: hidden;
     background-image: url('image/cenario.png');
-    /* caminho da imagem */
     background-size: cover;
-    /* ajusta para preencher o espaço */
     background-position: center;
-    /* centraliza a imagem */
 }
 
 .pokeball {
@@ -42,6 +39,33 @@
     width: 450px;
     animation: clouds-animation 20s infinite linear;
 }
+
+/* --- ESTILOS PARA O BOTÃO DE RESET (JOGAR NOVAMENTE) --- */
+
+.botao-resetar {
+    position: absolute; 
+    top: 50%;           
+    left: 50%;          
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.botao-resetar:hover {
+    background-color: #7c3aed;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* --- KEYFRAMES --- */
 
 @keyframes pokeball-animation {
     from {
