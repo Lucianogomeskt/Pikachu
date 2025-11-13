@@ -52,6 +52,14 @@ const resetarJogo = () => {
     iniciarJogo();
 };
 
+
+const resetarComToque = (e) => {
+    e.stopPropagation();
+    e.preventDefault(); 
+    resetarJogo();
+};
+
+
 iniciarJogo(); 
 
 document.addEventListener('keydown', (e) => {
@@ -68,4 +76,4 @@ gameBoard.addEventListener('touchstart', (e) => {
 });
 
 resetButton.addEventListener('click', resetarJogo);
-resetButton.addEventListener('touchstart', resetarJogo);
+resetButton.addEventListener('touchstart', resetarComToque);
