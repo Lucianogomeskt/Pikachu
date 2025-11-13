@@ -1,6 +1,7 @@
 const pikachu = document.querySelector('.pikachu');
 const pokeball = document.querySelector('.pokeball');
 const resetButton = document.getElementById('botao-resetar');
+const gameBoard = document.querySelector('.game-board'); 
 let gameLoop;
 
 const jump = () => {
@@ -21,7 +22,6 @@ const iniciarJogo = () => {
     pokeball.style.animation = 'pokeball-animation 1.5s infinite linear'; 
     pokeball.style.left = '';
 
-    // Garante que o pikachu volte à imagem de jogo e à posição base
     pikachu.src = 'image/pikachu.gif'; 
     pikachu.style.animation = '';
     pikachu.style.bottom = '0px'; 
@@ -54,10 +54,20 @@ const resetarJogo = () => {
 
 iniciarJogo(); 
 
+// Listener para o Pulo no PC
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' && gameLoop) {
         jump();
     }
 });
+
+// Listener para o Pulo no Celular
+gameBoard.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    if (gameLoop) {
+        jump();
+    }
+});
+// ----------------------------------------
 
 resetButton.addEventListener('click', resetarJogo);
