@@ -54,20 +54,18 @@ const resetarJogo = () => {
 
 iniciarJogo(); 
 
-// Listener para o Pulo no PC
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' && gameLoop) {
         jump();
     }
 });
 
-// Listener para o Pulo no Celular
 gameBoard.addEventListener('touchstart', (e) => {
     e.preventDefault();
     if (gameLoop) {
         jump();
     }
 });
-// ----------------------------------------
 
 resetButton.addEventListener('click', resetarJogo);
+resetButton.addEventListener('touchstart', resetarJogo);
