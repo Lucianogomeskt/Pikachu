@@ -4,11 +4,23 @@
     box-sizing: border-box;
 }
 
+/* --- NOVO CÓDIGO PARA CENTRALIZAR O JOGO NA PÁGINA --- */
+body {
+    display: flex; /* Habilita o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente (o jogo) */
+    align-items: center; /* Centraliza verticalmente (o jogo) */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+    margin: 0; /* Remove a margem padrão do body */
+    background-color: #f0f0f0; /* Opcional: define uma cor de fundo fora do jogo */
+}
+/* -------------------------------------------------------- */
+
+
 .game-board {
     width: 80%;
     height: 500px;
     border: 1px solid #333;
-    margin: 0 auto;
+    /* margin: 0 auto; - Esta linha é redundante quando usamos justify-content: center no body, mas mantive */
     position: relative;
     overflow: hidden;
     background-image: url('image/cenario.png');
